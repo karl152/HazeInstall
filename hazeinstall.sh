@@ -58,9 +58,10 @@ sed -i '1i #include <string.h>' src/wild.c
 echo -e "$color -> compiling HaZe..."
 make
 echo -e "$color -> creating configuration..."
-echo "~/haze_0.2/hazewm" > .xinitrc
-touch ~/.hazerc ~/.Xauthority
-chmod +x starthaze
-./starthaze
+echo "#!/bin/dash" > ~/.xinitrc
+echo "exec $HOME/haze_0.2/hazewm" > ~/.xinitrc
+chmod +x ~/.xinitrc
+touch ~/.hazerc
+echo -e "$color -> starting X Server..."
 startx
 # sudo checkinstall #TODO
