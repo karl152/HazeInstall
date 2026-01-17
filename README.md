@@ -1,5 +1,5 @@
 # HazeInstall
-an easy installation script for the HaZe window manager.
+an easy installation script for the HaZe window manager for Debian 13 Trixie.
 
 Some stuff like configuration and XDM/WDM integration is still missing, but the script does what it's supposed to do - installing HaZe.
 ***
