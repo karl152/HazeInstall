@@ -1,7 +1,7 @@
 # HazeInstall
 an easy installation script for the HaZe window manager.
 
-This project is planned and prepared, but needs some work and more importantly some time that I don't have at the moment
+Some stuff like configuration and XDM/WDM integration is still missing, but the script does what it's supposed to do - installing HaZe.
 ***
 want so solve a sudoku?
 |   |   |   |   |   |   |   |   |   |
