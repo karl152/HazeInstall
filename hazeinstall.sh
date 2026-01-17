@@ -57,11 +57,11 @@ sed -i '1i #include <string.h>' src/balloon.c
 sed -i '1i #include <string.h>' src/wild.c
 echo -e "$color -> compiling HaZe..."
 make
+echo -e "$color -> installing HaZe..."
+sudo checkinstall --type=debian --install=yes --pkgname=hazewm --pkgversion=0.2 --pkgrelease=1 --pkglicense=MIT --maintainer="HaZe port for Debian" --requires="xorg,xinit,libx11-6,libxft2,libxinerama1" --pkgsource="http://www.escomposlinux.org/jes/haze_02/haze_0.2.tar.gz" --maintainer="local build" --nodoc --default
 echo -e "$color -> creating configuration..."
 echo "#!/bin/dash" > ~/.xinitrc
-echo "exec $HOME/haze_0.2/hazewm" > ~/.xinitrc
+echo "exec hazewm" >> ~/.xinitrc
 chmod +x ~/.xinitrc
 touch ~/.hazerc
-echo -e "$color -> starting X Server..."
-startx
-# sudo checkinstall #TODO
+echo -e "$color Installation done! Run startx to start the X Server.\e[0m"
