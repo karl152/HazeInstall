@@ -60,8 +60,24 @@ make
 echo -e "$color -> installing HaZe..."
 sudo checkinstall --type=debian --install=yes --pkgname=hazewm --pkgversion=0.2 --pkgrelease=1 --pkglicense=MIT --maintainer="HaZe port for Debian" --requires="xorg,xinit,libx11-6,libxft2,libxinerama1" --pkgsource="http://www.escomposlinux.org/jes/haze_02/haze_0.2.tar.gz" --maintainer="local build" --nodoc --default
 echo -e "$color -> creating configuration..."
-echo "#!/bin/dash" > ~/.xinitrc
-echo "exec hazewm" >> ~/.xinitrc
-chmod +x ~/.xinitrc
 touch ~/.hazerc
+echo ""
+echo -e "$color Do you want to overwrite ~/.xinitrc ?"
+xoyn=("yes" "no")
+select xoa in "${xoyn[@]}"; do
+    case $xoa in
+        "yes")
+            echo "#!/bin/dash" > ~/.xinitrc
+            echo "exec hazewm" >> ~/.xinitrc
+            chmod +x ~/.xinitrc
+            break
+            ;;
+        "no")
+            break
+            ;;
+        *)
+            echo "unknown option"
+            ;;
+    esac
+done
 echo -e "$color Installation done! Run startx to start the X Server.\e[0m"
