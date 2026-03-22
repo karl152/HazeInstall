@@ -38,9 +38,9 @@ echo -e "$color -> updating system..."
 sudo $pkgman update
 sudo $pkgman dist-upgrade -y
 echo -e "$color -> installing wget..."
-sudo $pkgman install wget -y
+sudo $pkgman install wget2 -y
 echo -e "$color -> downloading HaZe..."
-wget http://www.escomposlinux.org/jes/haze_02/haze_0.2.tar.gz
+wget2 http://www.escomposlinux.org/jes/haze_02/haze_0.2.tar.gz
 echo -e "$color -> checking if HaZe was downloaded correctly..."
 sha256sum --check haze_0.2.tar.gz.sha256
 echo -e "$color -> extracting archive..."
